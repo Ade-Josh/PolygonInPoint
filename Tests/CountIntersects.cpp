@@ -6,72 +6,72 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
-	TEST_CLASS(CountIntersecets)
-	{
-	public:
-		TEST_METHOD(NoIntersections)
-		{
+    TEST_CLASS(CountIntersecets)
+    {
+    public:
+        TEST_METHOD(NoIntersections)
+        {
             const std::vector<point2d> points = {
-			    {1,1}, {4,5}, {6,1}, {4,3}
-			};
+                {1, 1}, {4, 5}, {6, 1}, {4, 3}
+            };
             const polygon2d polygon(points);
-            const ray2d ray{ 0, 0 };
-		
-			const auto result = count_intersects(polygon, ray);
+            const ray2d ray{0, 0};
 
-			Assert::AreEqual(0, result);
-		}
+            const auto result = count_intersects(polygon, ray);
 
-		TEST_METHOD(OneIntersection)
-		{
-			const std::vector<point2d> points = {
-				{1,1}, {4,5}, {6,1}, {4,3}
-			};
-			const polygon2d polygon(points);
-			const ray2d ray{ 4, 4 };
+            Assert::AreEqual(0, result);
+        }
 
-			const auto result = count_intersects(polygon, ray);
+        TEST_METHOD(OneIntersection)
+        {
+            const std::vector<point2d> points = {
+                {1, 1}, {4, 5}, {6, 1}, {4, 3}
+            };
+            const polygon2d polygon(points);
+            const ray2d ray{4, 4};
 
-			Assert::AreEqual(1, result);
-		}
+            const auto result = count_intersects(polygon, ray);
 
-		TEST_METHOD(TwoIntersections)
-		{
-			const std::vector<point2d> points = {
-				{1,1}, {4,5}, {6,1}, {4,3}
-			};
-			const polygon2d polygon(points);
-			const ray2d ray{ 1, 4 };
+            Assert::AreEqual(1, result);
+        }
 
-			const auto result = count_intersects(polygon, ray);
+        TEST_METHOD(TwoIntersections)
+        {
+            const std::vector<point2d> points = {
+                {1, 1}, {4, 5}, {6, 1}, {4, 3}
+            };
+            const polygon2d polygon(points);
+            const ray2d ray{1, 4};
 
-			Assert::AreEqual(2, result);
-		}
+            const auto result = count_intersects(polygon, ray);
 
-		TEST_METHOD(EvenNumberOfIntersections)
-		{
-			const std::vector<point2d> points = {
-				{1,1}, {4,5}, {6,1}, {4,3}
-			};
-			const polygon2d polygon(points);
-			const ray2d ray{ 0, 2 };
+            Assert::AreEqual(2, result);
+        }
 
-			const auto result = count_intersects(polygon, ray);
+        TEST_METHOD(EvenNumberOfIntersections)
+        {
+            const std::vector<point2d> points = {
+                {1, 1}, {4, 5}, {6, 1}, {4, 3}
+            };
+            const polygon2d polygon(points);
+            const ray2d ray{0, 2};
 
-			Assert::AreEqual(4, result);
-		}
+            const auto result = count_intersects(polygon, ray);
 
-		TEST_METHOD(OddNumberOfIntersections)
-		{
-			const std::vector<point2d> points = {
-				{1,1}, {4,5}, {6,1}, {4,3}
-			};
-			const polygon2d polygon(points);
-			const ray2d ray{ 3, 3 };
+            Assert::AreEqual(4, result);
+        }
 
-			const auto result = count_intersects(polygon, ray);
+        TEST_METHOD(OddNumberOfIntersections)
+        {
+            const std::vector<point2d> points = {
+                {1, 1}, {4, 5}, {6, 1}, {4, 3}
+            };
+            const polygon2d polygon(points);
+            const ray2d ray{3, 3};
 
-			Assert::AreEqual(3, result);
-		}
-	};
+            const auto result = count_intersects(polygon, ray);
+
+            Assert::AreEqual(3, result);
+        }
+    };
 }
