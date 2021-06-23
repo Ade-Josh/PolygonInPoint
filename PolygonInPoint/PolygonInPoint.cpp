@@ -107,7 +107,8 @@ data_check_result check_data(const polygon2d& polygon, const point2d point)
     {
         return {
             false,
-            "The coordinates of the polygon's point " + std::to_string(not_valid_point_iter - polygon.points.begin()) +
+            "The coordinates of the polygon's point " + std::to_string(
+                not_valid_point_iter - polygon.points.begin() + 1) +
             " must not exceed the allowed range [" + point_min_value_string + "; " + point_max_value_string + "]"
         };
     }
