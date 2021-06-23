@@ -79,7 +79,7 @@ bool is_point_inside_polygon(std::vector<point2d> polygon_points, point2d point)
 data_check_result check_data(const polygon2d& polygon, point2d point);
 bool is_point_on_edge_of_polygon(const polygon2d& polygon, struct point2d point);
 int count_intersects(const polygon2d& polygon, ray2d ray);
-bool ray_intersect_segment(point2d first, point2d last, ray2d ray);
+bool ray_intersects_segment(point2d first, point2d last, ray2d ray);
 bool two_segments_intersect(point2d first1, point2d last1, point2d first2, point2d last2);
 void calculate_angles_for_polygon(polygon2d& polygon, struct point2d point);
 void calculate_angle_of_rotation(ray2d& ray, const polygon2d& polygon);
