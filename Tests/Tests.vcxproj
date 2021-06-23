@@ -165,6 +165,7 @@
     <ClCompile Include="CalculateAngleOfRotation.cpp" />
     <ClCompile Include="CalculateAnglesForPolygon.cpp" />
     <ClCompile Include="CheckData.cpp" />
+    <ClCompile Include="IsPointInsidePolygon.cpp" />
     <ClCompile Include="IsPointOnEdgeOfPolygon.cpp" />
     <ClCompile Include="IsPointOnSegment.cpp" />
     <ClCompile Include="pch.cpp">
