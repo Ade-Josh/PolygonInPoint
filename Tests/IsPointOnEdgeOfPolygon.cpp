@@ -15,7 +15,7 @@ namespace Tests
                 {2, 5}, {5, 5}, {4, 4}, {5, 2}, {2, 2}
             };
             const polygon2d polygon(points);
-            const point2d point{ 2, 4 };
+            const point2d point{2, 4};
 
             const auto result = is_point_on_edge_of_polygon(polygon, point);
 
@@ -28,7 +28,7 @@ namespace Tests
                 {2, 5}, {5, 5}, {4, 4}, {5, 2}, {2, 2}
             };
             const polygon2d polygon(points);
-            const point2d point{ 2, 5 };
+            const point2d point{2, 5};
 
             const auto result = is_point_on_edge_of_polygon(polygon, point);
 
@@ -41,7 +41,7 @@ namespace Tests
                 {2, 5}, {5, 5}, {4, 4}, {5, 2}, {2, 2}
             };
             const polygon2d polygon(points);
-            const point2d point{ 3, 4 };
+            const point2d point{3, 4};
 
             const auto result = is_point_on_edge_of_polygon(polygon, point);
 
@@ -54,7 +54,7 @@ namespace Tests
                 {2, 5}, {5, 5}, {4, 4}, {5, 2}, {2, 2}
             };
             const polygon2d polygon(points);
-            const point2d point{ 2, 1 };
+            const point2d point{2, 1};
 
             const auto result = is_point_on_edge_of_polygon(polygon, point);
 
