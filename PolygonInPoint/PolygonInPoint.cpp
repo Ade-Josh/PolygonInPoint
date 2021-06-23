@@ -299,6 +299,11 @@ void calculate_angle_of_rotation(ray2d& ray, const polygon2d& polygon)
         ray.tg = ray.sin / ray.cos;
 }
 
+bool operator==(const ray2d first, const ray2d second)
+{
+    return first.x == second.x && first.y == second.y && abs(first.angle - second.angle) <= 0.01;
+}
+
 polygon2d::polygon2d(std::vector<point2d> coords): points{std::move(coords)}
 {
 }
