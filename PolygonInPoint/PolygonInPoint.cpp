@@ -39,3 +39,32 @@ bool any_points_match(const polygon2d& polygon)
 
     return false;
 }
+
+bool any_edges_intersect(const polygon2d& my_poly)
+{
+    const int count = my_poly.points_count();
+    for (int i = 0; i <= count - 2; i++)
+    {
+        for (int j = 0; j <= count - 2; j++)
+        {
+            if (two_segments_intersect(my_poly.points[i], my_poly.points[i + 1],
+                                       my_poly.points[j], my_poly.points[j + 1])
+                && i != j && abs(i - j) != 1)
+            {
+                return true;
+            }
+        }
+    }
+
+    for (int i = 1; i <= count - 3; i++)
+    {
+        if (two_segments_intersect(my_poly.points[0], my_poly.points[count - 1],
+                                   my_poly.points[i], my_poly.points[i + 1]))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
