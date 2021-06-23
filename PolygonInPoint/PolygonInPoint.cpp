@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <functional>
 #include <set>
+#include <utility>
+
 constexpr auto rad = 0.0174533;
 
 bool operator==(const polygon2d& first, const polygon2d& second)
@@ -192,6 +194,7 @@ void calculate_angles_for_polygon(polygon2d& polygon, const point2d point)
     }
 }
 
+
 bool two_segments_intersect(const point2d first1, const point2d last1, const point2d first2, const point2d last2)
 {
     const int a1 = first1.y - last1.y;
@@ -321,4 +324,31 @@ int polygon2d::points_count() const
 void polygon2d::push_back(const double angle)
 {
     angles.push_back(angle);
+}
+
+bool is_point_inside_polygon(std::vector<point2d> polygon_points, const point2d point)
+{
+    polygon2d my_poly(std::move(polygon_points));
+
+    if (const auto [is_correct, reason] = check_data(my_poly, point);
+        !is_correct)
+    {
+        throw data_check_error{reason};
+    }
+
+    if (is_point_on_edge_of_polygon(my_poly, point))
+        return true;
+
+    calculate_angles_for_polygon(my_poly, point);
+
+    std::sort(my_poly.angles.begin(), my_poly.angles.end(), [](const auto first, const auto second)
+    {
+        return abs(first) > abs(second);
+    });
+
+    ray2d my_ray(point.x, point.y);
+    calculate_angle_of_rotation(my_ray, my_poly);
+
+    const int count = count_intersects(my_poly, my_ray);
+    return count % 2 != 0;
 }
