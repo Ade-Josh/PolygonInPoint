@@ -176,6 +176,7 @@
     </ClCompile>
     <ClCompile Include="CountIntersects.cpp" />
     <ClCompile Include="RayIntersectsSegment.cpp" />
+    <ClCompile Include="TwoSegmentIntersect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
