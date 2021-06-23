@@ -307,7 +307,11 @@ bool operator==(const ray2d first, const ray2d second)
     return first.x == second.x && first.y == second.y && abs(first.angle - second.angle) <= 0.01;
 }
 
-polygon2d::polygon2d(std::vector<point2d> coords): points{std::move(coords)}
+polygon2d::polygon2d(std::vector<point2d> points): points{std::move(points)}
+{
+}
+
+polygon2d::polygon2d(std::vector<double> angles) : angles{std::move(angles)}
 {
 }
 
