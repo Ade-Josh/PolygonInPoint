@@ -11,10 +11,10 @@ namespace Tests
     public:
         TEST_METHOD(RayAndSegmentAreParallel)
         {
-            const point2d first{ 2, 2 };
-            const point2d last{ 4, 2 };
-            const ray2d ray{ 1, 1 };
-            
+            const point2d first{2, 2};
+            const point2d last{4, 2};
+            const ray2d ray{1, 1};
+
             const bool result = ray_intersects_segment(first, last, ray);
 
             Assert::AreEqual(false, result);
@@ -22,9 +22,9 @@ namespace Tests
 
         TEST_METHOD(RayAndSegmentOnSameStraignLineButDoNotIntersect)
         {
-            const point2d first{ 1, 1 };
-            const point2d last{ 3, 1 };
-            const ray2d ray{ 4, 1 };
+            const point2d first{1, 1};
+            const point2d last{3, 1};
+            const ray2d ray{4, 1};
 
             const bool result = ray_intersects_segment(first, last, ray);
 
@@ -33,9 +33,9 @@ namespace Tests
 
         TEST_METHOD(RayAndSegmentOnSameStraignLineAndDoIntersect)
         {
-            const point2d first{ 3, 3 };
-            const point2d last{ 4, 4 };
-            ray2d ray{ 2, 2 };
+            const point2d first{3, 3};
+            const point2d last{4, 4};
+            ray2d ray{2, 2};
             ray.tg = 1;
 
             const bool result = ray_intersects_segment(first, last, ray);
@@ -45,9 +45,9 @@ namespace Tests
 
         TEST_METHOD(RayAndSegmentAreCrissCross)
         {
-            const point2d first{ 1, 2 };
-            const point2d last{ 3, 1 };
-            ray2d ray{ 2, 1 };
+            const point2d first{1, 2};
+            const point2d last{3, 1};
+            ray2d ray{2, 1};
             ray.tg = 1;
 
             const bool result = ray_intersects_segment(first, last, ray);
@@ -57,9 +57,9 @@ namespace Tests
 
         TEST_METHOD(RayAndSegmentArePerpendicular)
         {
-            const point2d first{ 2, 2 };
-            const point2d last{ 3, 1 };
-            ray2d ray{ 2, 1 };
+            const point2d first{2, 2};
+            const point2d last{3, 1};
+            ray2d ray{2, 1};
             ray.tg = 1;
 
             const bool result = ray_intersects_segment(first, last, ray);
@@ -69,9 +69,9 @@ namespace Tests
 
         TEST_METHOD(RayInterseacts)
         {
-            const point2d first{ 2, 2 };
-            const point2d last{ 5, 1 };
-            ray2d ray{ 2, 2 };
+            const point2d first{2, 2};
+            const point2d last{5, 1};
+            ray2d ray{2, 2};
             ray.tg = 1;
 
             const bool result = ray_intersects_segment(first, last, ray);
@@ -81,9 +81,9 @@ namespace Tests
 
         TEST_METHOD(RayInterseacts2)
         {
-            const point2d first{ 2, 2 };
-            const point2d last{ 4, 4 };
-            const ray2d ray{ 3, 3 };
+            const point2d first{2, 2};
+            const point2d last{4, 4};
+            const ray2d ray{3, 3};
 
             const bool result = ray_intersects_segment(first, last, ray);
 
@@ -92,9 +92,9 @@ namespace Tests
 
         TEST_METHOD(RayStartsAtSegmenPoint)
         {
-            const point2d first{ 2, 2 };
-            const point2d last{ 5, 2 };
-            ray2d ray{ 2, 2 };
+            const point2d first{2, 2};
+            const point2d last{5, 2};
+            ray2d ray{2, 2};
             ray.tg = 1;
 
             const bool result = ray_intersects_segment(first, last, ray);
