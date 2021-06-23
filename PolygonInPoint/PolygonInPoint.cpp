@@ -279,3 +279,23 @@ int count_intersects(const polygon2d& polygon, const ray2d ray)
 
     return count;
 }
+
+void calculate_angle_of_rotation(ray2d& ray, const polygon2d& polygon)
+{
+    if (polygon.angles[0] != 0)
+        ray.angle = 0;
+    else
+    {
+        int ind = 1;
+        while (ind < polygon.angles.size() && polygon.angles[ind] == 0)
+            ind++;
+        ray.angle = polygon.angles[ind] / 2;
+    }
+
+    ray.sin = sin(ray.angle * rad);
+    ray.cos = cos(ray.angle * rad);
+
+    if (ray.cos != 0)
+        ray.tg = ray.sin / ray.cos;
+}
+
