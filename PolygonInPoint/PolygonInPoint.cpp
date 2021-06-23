@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <functional>
 #include <set>
+constexpr auto rad = 0.0174533;
+
 bool operator==(const polygon2d& first, const polygon2d& second)
 {
     if (first.points_count() != second.points_count())
@@ -164,3 +166,29 @@ bool is_point_on_edge_of_polygon(const polygon2d& polygon, const point2d point)
 
     return false;
 }
+
+void calculate_angles_for_polygon(polygon2d& polygon, const point2d point)
+{
+    for (const auto [x, y] : polygon.points)
+    {
+        const point2d h = {x, point.y};
+        double angle = 0;
+
+        if (x < point.x || y != point.y)
+        {
+            const double z = (point.x - h.x) * (point.x - h.x) + (h.y - y) * (h.y - y);
+
+            const double cos = abs(point.x - h.x) / sqrt(z);
+            angle = acos(cos) / rad;
+
+            if (x < point.x)
+                angle = 180 - angle;
+
+            if (y < point.y)
+                angle *= -1;
+        }
+
+        polygon.push_back(angle);
+    }
+}
+
