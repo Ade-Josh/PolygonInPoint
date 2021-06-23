@@ -47,15 +47,15 @@ bool any_points_match(const polygon2d& polygon)
     return false;
 }
 
-bool any_edges_intersect(const polygon2d& my_poly)
+bool any_polygon_sides_intersect(const polygon2d& polygon)
 {
-    const int count = my_poly.points_count();
+    const int count = polygon.points_count();
     for (int i = 0; i <= count - 2; i++)
     {
         for (int j = 0; j <= count - 2; j++)
         {
-            if (two_segments_intersect(my_poly.points[i], my_poly.points[i + 1],
-                                       my_poly.points[j], my_poly.points[j + 1])
+            if (two_segments_intersect(polygon.points[i], polygon.points[i + 1],
+                                       polygon.points[j], polygon.points[j + 1])
                 && i != j && abs(i - j) != 1)
             {
                 return true;
@@ -65,8 +65,8 @@ bool any_edges_intersect(const polygon2d& my_poly)
 
     for (int i = 1; i <= count - 3; i++)
     {
-        if (two_segments_intersect(my_poly.points[0], my_poly.points[count - 1],
-                                   my_poly.points[i], my_poly.points[i + 1]))
+        if (two_segments_intersect(polygon.points[0], polygon.points[count - 1],
+                                   polygon.points[i], polygon.points[i + 1]))
         {
             return true;
         }
@@ -113,7 +113,7 @@ data_check_result check_data(const polygon2d& polygon, const point2d point)
         return {false, "The points of the polygon must not match"};
     }
 
-    if (any_edges_intersect(polygon))
+    if (any_polygon_sides_intersect(polygon))
     {
         return {false, "The polygon sides must not intersect"};
     }
