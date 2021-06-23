@@ -6,7 +6,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
-	TEST_CLASS(CountIntersecetsTests)
+	TEST_CLASS(CountIntersecets)
 	{
 	public:
 		TEST_METHOD(NoIntersections)
