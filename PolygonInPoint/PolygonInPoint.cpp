@@ -286,10 +286,12 @@ void calculate_angle_of_rotation(ray2d& ray, const polygon2d& polygon)
         ray.angle = 0;
     else
     {
-        int ind = 1;
-        while (ind < polygon.angles.size() && polygon.angles[ind] == 0)
-            ind++;
-        ray.angle = polygon.angles[ind] / 2;
+        for (const auto angle : polygon.angles)
+            if (angle != 0)
+            {
+                ray.angle = angle / 2;
+                break;
+            }
     }
 
     ray.sin = sin(ray.angle * rad);
