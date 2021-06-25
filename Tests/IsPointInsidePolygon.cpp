@@ -67,7 +67,7 @@ namespace Tests
             const std::vector<point2d> points = {
                 {1, 1}, {4, 4}, {6, 1}, {4, 2}
             };
-            const point2d point{6, 5};
+            const point2d point{1, 2};
 
             Assert::IsFalse(is_point_inside_polygon(points, point));
         }
