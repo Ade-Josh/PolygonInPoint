@@ -67,7 +67,7 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
-        TEST_METHOD(RayInterseacts)
+        TEST_METHOD(RayIntersects)
         {
             const point2d first{2, 2};
             const point2d last{5, 1};
@@ -79,7 +79,7 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
-        TEST_METHOD(RayInterseacts2)
+        TEST_METHOD(RayIntersects2)
         {
             const point2d first{2, 2};
             const point2d last{4, 4};
@@ -90,7 +90,7 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
-        TEST_METHOD(RayStartsAtSegmenPoint)
+        TEST_METHOD(RayStartsAtSegmentPoint)
         {
             const point2d first{2, 2};
             const point2d last{5, 2};

@@ -20,7 +20,7 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
-        TEST_METHOD(PointOnVerticalSide)
+        TEST_METHOD(PointOnVertical)
         {
             const point2d first{2, 2};
             const point2d last{2, 5};
@@ -31,7 +31,7 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
-        TEST_METHOD(PointOnHorizontalSide)
+        TEST_METHOD(PointOnHorizontal)
         {
             const point2d first{1, 1};
             const point2d last{4, 1};
@@ -67,7 +67,7 @@ namespace Tests
         TEST_METHOD(RightHorizontalSide)
         {
             const point2d first{1, 1};
-            const point2d last{4, 1};
+            const point2d last{4, 2};
             const point2d point{6, 1};
 
             const bool result = is_point_on_segment(first, last, point);
