@@ -6,9 +6,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
+    /**
+     * \brief Класс тестирования функции TwoSegmentIntersect
+     */
     TEST_CLASS(TwoSegmentIntersect)
     {
     public:
+        /**
+        * \brief сегменты параллельны
+        */
         TEST_METHOD(SegmentsAreParallel)
         {
             const point2d first1{1, 1};
@@ -21,6 +27,9 @@ namespace Tests
             Assert::AreEqual(false, result);
         }
 
+        /**
+        * \brief Отрезки находятся на одной прямой, но не пересекаются
+        */
         TEST_METHOD(SegmentsAreOnSameStraignLineButDoNotIntersect)
         {
             const point2d first1{1, 1};
@@ -33,6 +42,9 @@ namespace Tests
             Assert::AreEqual(false, result);
         }
 
+        /**
+        * \brief Отрезки находятся на одной прямой, но пересекаются
+        */
         TEST_METHOD(SegmentsAreOnSameStraignLineAndDoIntersect)
         {
             const point2d first1{2, 1};
@@ -45,6 +57,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief сегменты перпендикулярны
+        */
         TEST_METHOD(SegmentsArePerpendicular)
         {
             const point2d first1{1, 2};
@@ -58,6 +73,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief сегменты перекрещиваются
+        */
         TEST_METHOD(SegmentsAreCrissCross)
         {
             const point2d first1{1, 3};
@@ -70,6 +88,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief сегменты одинаковы
+        */
         TEST_METHOD(SegmentsAreSame)
         {
             const point2d first1{1, 3};
@@ -82,6 +103,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief отрезки имеют одну вершину
+        */
         TEST_METHOD(SegmentsHaveSameVertex)
         {
             const point2d first1{2, 1};

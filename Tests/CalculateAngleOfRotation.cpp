@@ -9,9 +9,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
+    /**
+     * \brief Класс тестирования функции CalculateAngleOfRotation
+     */
     TEST_CLASS(CalculateAngleOfRotation)
     {
     public:
+        /**
+        * \brief Один из углов полигона нуля
+        */
         TEST_METHOD(OneOfPolygonAnglesIsZero)
         {
             const std::vector<double> angles = {
@@ -28,6 +34,9 @@ namespace Tests
             Assert::IsTrue(expectedRay == ray);
         }
 
+        /**
+        * \brief Два из углов полигона нуля
+        */
         TEST_METHOD(TwoOfPolygonAnglesAreZero)
         {
             const std::vector<double> angles = {
@@ -44,6 +53,9 @@ namespace Tests
             Assert::IsTrue(expectedRay == ray);
         }
 
+        /**
+       * \brief Некоторые углов полигона нуля
+       */
         TEST_METHOD(SomeOfPolygonAnglesAreZero)
         {
             const std::vector<double> angles = {
@@ -60,6 +72,9 @@ namespace Tests
             Assert::IsTrue(expectedRay == ray);
         }
 
+        /**
+         * \brief углы полигона, расположенные в 1-й четверти
+        */
         TEST_METHOD(PolygonAnglesLocatedIn1stQuarter)
         {
             const std::vector<double> angles = {
@@ -76,6 +91,9 @@ namespace Tests
             Assert::IsTrue(expectedRay == ray);
         }
 
+        /**
+        * \brief углы полигона, расположенные в 2-й четверти
+        */
         TEST_METHOD(PolygonAnglesLocatedIn2ndQuarter)
         {
             const std::vector<double> angles = {
@@ -92,6 +110,9 @@ namespace Tests
             Assert::IsTrue(expectedRay == ray);
         }
 
+        /**
+        * \brief углы полигона, расположенные в 3-й четверти
+        */
         TEST_METHOD(PolygonAnglesLocatedIn3rdQuarter)
         {
             const std::vector<double> angles = {
@@ -108,6 +129,9 @@ namespace Tests
             Assert::IsTrue(expectedRay == ray);
         }
 
+        /**
+        * \brief углы полигона, расположенные в 4-й четверти
+        */
         TEST_METHOD(PolygonAnglesLocatedIn4thQuarter)
         {
             const std::vector<double> angles = {

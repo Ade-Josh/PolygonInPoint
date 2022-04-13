@@ -10,9 +10,15 @@ using namespace std::string_literals;
 
 namespace Tests
 {
+    /**
+     * \brief Класс тестирования функции CheckData
+     */
     TEST_CLASS(CheckData)
     {
     public:
+        /**
+        * \brief все правильно
+        */
         TEST_METHOD(EverythingIsCorrect)
         {
             const std::vector<point2d> points = {
@@ -27,6 +33,9 @@ namespace Tests
             Assert::AreEqual(""s, reason);
         }
 
+        /**
+        * \brief слишком мало очков
+        */
         TEST_METHOD(TooFewPoints)
         {
             const std::vector<point2d> points = {
@@ -41,6 +50,9 @@ namespace Tests
             Assert::AreEqual("The number of points must be in the range [3; 50]"s, reason);
         }
 
+        /**
+        * \brief слишком много очков
+        */
         TEST_METHOD(TooMuchPoints)
         {
             const std::vector<point2d> points = {
@@ -58,6 +70,9 @@ namespace Tests
             Assert::AreEqual("The number of points must be in the range [3; 50]"s, reason);
         }
 
+        /**
+         * \brief два очка совпадают
+         */
         TEST_METHOD(TwoPointsMatch)
         {
             const std::vector<point2d> points = {
@@ -72,6 +87,9 @@ namespace Tests
             Assert::AreEqual("The points of the polygon must not match"s, reason);
         }
 
+        /**
+         * \brief стороны полигона пересекаются
+         */
         TEST_METHOD(PolygonSidesIntersect)
         {
             const std::vector<point2d> points = {
@@ -86,6 +104,9 @@ namespace Tests
             Assert::AreEqual("The polygon sides must not intersect"s, reason);
         }
 
+        /**
+         * \brief целевая точка находится вне досягаемости
+         */
         TEST_METHOD(TargetPointIsOutOfRange)
         {
             const std::vector<point2d> points = {
@@ -100,6 +121,9 @@ namespace Tests
             Assert::AreEqual("The coordinates of the point must not exceed the allowed range [-1000; 1000]"s, reason);
         }
 
+        /**
+        * \brief одна из точек многоугольника находится вне диапазонаи
+        */
         TEST_METHOD(OneOfPolygonPointsIsOutOfRange)
         {
             const std::vector<point2d> points = {

@@ -6,9 +6,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
-    TEST_CLASS(CountIntersecets)
+    /**
+     * \brief Класс тестирования функции CountIntersects
+     */
+    TEST_CLASS(CountIntersects)
     {
     public:
+        /**
+         * \brief нет пересечения
+         */
         TEST_METHOD(NoIntersections)
         {
             const std::vector<point2d> points = {
@@ -22,6 +28,9 @@ namespace Tests
             Assert::AreEqual(0, result);
         }
 
+        /**
+         * \brief один перекресток
+         */
         TEST_METHOD(OneIntersection)
         {
             const std::vector<point2d> points = {
@@ -35,6 +44,9 @@ namespace Tests
             Assert::AreEqual(1, result);
         }
 
+        /**
+        * \brief два перекрестка
+        */
         TEST_METHOD(TwoIntersections)
         {
             const std::vector<point2d> points = {
@@ -48,6 +60,9 @@ namespace Tests
             Assert::AreEqual(2, result);
         }
 
+        /**
+        * \brief четное число перекрестков
+        */
         TEST_METHOD(EvenNumberOfIntersections)
         {
             const std::vector<point2d> points = {
@@ -61,6 +76,9 @@ namespace Tests
             Assert::AreEqual(4, result);
         }
 
+        /**
+       * \brief нечетное число перекрестков
+       */
         TEST_METHOD(OddNumberOfIntersections)
         {
             const std::vector<point2d> points = {

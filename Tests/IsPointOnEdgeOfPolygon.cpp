@@ -6,9 +6,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
+    /**
+     * \brief Класс тестирования функции IsPointOnEdgeOfPolygon
+     */
     TEST_CLASS(IsPointOnEdgeOfPolygon)
     {
     public:
+        /**
+        * \brief точка на грани
+        */
         TEST_METHOD(PointIsOnEdge)
         {
             const std::vector<point2d> points = {
@@ -21,7 +27,9 @@ namespace Tests
 
             Assert::AreEqual(true, result);
         }
-
+        /**
+        * \brief точка является вершиной
+        */
         TEST_METHOD(PointIsVertex)
         {
             const std::vector<point2d> points = {
@@ -35,6 +43,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief точка находится внутри полигона
+        */
         TEST_METHOD(PointIsInsideOfPolygon)
         {
             const std::vector<point2d> points = {
@@ -48,6 +59,9 @@ namespace Tests
             Assert::AreEqual(false, result);
         }
 
+        /**
+        * \brief точка находится вне полигона
+        */
         TEST_METHOD(PointIsOutsideOfPolygon)
         {
             const std::vector<point2d> points = {

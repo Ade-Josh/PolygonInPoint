@@ -6,9 +6,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
+    /**
+     * \brief Класс тестирования функции RayIntersectsSegment
+     */
     TEST_CLASS(RayIntersectsSegment)
     {
     public:
+        /**
+         * \brief луч и отрезок параллельны
+         */
         TEST_METHOD(RayAndSegmentAreParallel)
         {
             const point2d first{2, 2};
@@ -20,6 +26,9 @@ namespace Tests
             Assert::AreEqual(false, result);
         }
 
+        /**
+         * \brief Луч и сегмент на одной прямой, но не пересекаются
+         */
         TEST_METHOD(RayAndSegmentOnSameStraignLineButDoNotIntersect)
         {
             const point2d first{1, 1};
@@ -31,6 +40,9 @@ namespace Tests
             Assert::AreEqual(false, result);
         }
 
+        /**
+        * \brief Луч и сегмент на одной прямой, но пересекаются
+        */
         TEST_METHOD(RayAndSegmentOnSameStraignLineAndDoIntersect)
         {
             const point2d first{3, 3};
@@ -43,6 +55,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief Луч и сегмент перекрещиваются
+        */
         TEST_METHOD(RayAndSegmentAreCrissCross)
         {
             const point2d first{1, 2};
@@ -55,6 +70,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief Луч и отрезок перпендикулярны
+        */
         TEST_METHOD(RayAndSegmentArePerpendicular)
         {
             const point2d first{2, 2};
@@ -67,6 +85,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief Луч пересекается
+        */
         TEST_METHOD(RayIntersects)
         {
             const point2d first{2, 2};
@@ -79,6 +100,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief Луч пересекается 2
+        */
         TEST_METHOD(RayIntersects2)
         {
             const point2d first{2, 2};
@@ -90,6 +114,9 @@ namespace Tests
             Assert::AreEqual(true, result);
         }
 
+        /**
+        * \brief Луч начинается в точке сегмента
+        */
         TEST_METHOD(RayStartsAtSegmentPoint)
         {
             const point2d first{2, 2};

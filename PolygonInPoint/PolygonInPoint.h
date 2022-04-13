@@ -11,21 +11,44 @@ struct point2d
     int y;
 };
 
+/**
+ * \brief Оператор сравнения на равенство структуры Unit
+ * \param[in] first Левый операнд сравнения
+ * \param[in] second Правый операнд сравнения
+ * \return Признак сравненния
+ */
 inline bool operator==(const point2d first, const point2d second)
 {
     return first.x == second.x && first.y == second.y;
 }
 
+/**
+ * \brief Оператор сравнения на равенство структуры Unit
+ * \param[in] first Левый операнд сравнения
+ * \param[in] second Правый операнд сравнения
+ * \return Массив строк
+ */
 inline bool operator<(const point2d first, const point2d second)
 {
     return std::tie(first.x, first.y) < std::tie(second.x, second.y);
 }
 
+/**
+ * \brief Оператор сравнения на равенство структуры Unit
+ * \param[in] first Левый операнд сравнения
+ * \param[in] second Правый операнд сравнения
+ * \return Признак сравненния
+ */
 inline bool operator!=(const point2d first, const point2d second)
 {
     return !(first == second);
 }
-
+/**
+ * \brief Оператор сравнения на равенство структуры Unit
+ * \param[in] in Левый операнд сравнения
+ * \param[in] point Правый операнд сравнения
+ * \return левю операнд
+ */
 inline std::istream& operator>>(std::istream& in, point2d& point)
 {
     in >> point.x >> point.y;
@@ -66,12 +89,18 @@ struct ray2d
     friend bool operator==(ray2d first, ray2d second);
 };
 
+/**
+ * \brief результат проверки данных
+ */
 struct data_check_result
 {
     bool is_correct;
     std::string reason;
 };
 
+/**
+ * \brief ошибка проверки данных
+ */
 struct data_check_error final : std::invalid_argument
 {
     using std::invalid_argument::invalid_argument;

@@ -9,9 +9,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
+    /**
+     * \brief Класс тестирования функции CalculateAngleForPolygon
+     */
     TEST_CLASS(CalculateAnglesForPolygon)
     {
     public:
+        /**
+         * \brief один из рассчитанных углов  нулю
+         */
         TEST_METHOD(OneOfCalculatedAnglesIsZero)
         {
             const std::vector<point2d> points = {
@@ -29,6 +35,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief Два из рассчитанных углов  нулю
+         */
         TEST_METHOD(TwoOfCalculatedAnglesAreZero)
         {
             const std::vector<point2d> points = {
@@ -46,6 +55,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief Некоьорые рассчитанных углов  нулю
+         */
         TEST_METHOD(SomeOfCalculatedAnglesAreZero)
         {
             const std::vector<point2d> points = {
@@ -62,6 +74,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief один из рассчитанных углов равен 90
+         */
         TEST_METHOD(OneOfCalculatedAnglesIs90)
         {
             const std::vector<point2d> points = {
@@ -79,6 +94,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief один из рассчитанных углов равен 100
+         */
         TEST_METHOD(OneOfCalculatedAnglesIs180)
         {
             const std::vector<point2d> points = {
@@ -96,6 +114,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief один из рассчитанных углов равен 270
+         */
         TEST_METHOD(OneOfCalculatedAnglesIs270)
         {
             const std::vector<point2d> points = {
@@ -113,6 +134,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief расчетный угол находится в 1-й четверти
+         */
         TEST_METHOD(CalculatedAnglesLocatedIn1stQuarter)
         {
             const std::vector<point2d> points = {
@@ -130,6 +154,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief расчетный угол находится в 2-й четверти
+         */
         TEST_METHOD(CalculatedAnglesLocatedIn2ndQuarter)
         {
             const std::vector<point2d> points = {
@@ -147,6 +174,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief расчетный угол находится в 3-й четверти
+         */
         TEST_METHOD(CalculatedAnglesLocatedIn3rdQuarter)
         {
             const std::vector<point2d> points = {
@@ -164,6 +194,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief расчетный угол находится в 4-й четверти
+         */
         TEST_METHOD(CalculatedAnglesLocatedIn4thQuarter)
         {
             const std::vector<point2d> points = {
@@ -181,6 +214,9 @@ namespace Tests
             Assert::IsTrue(expectedPolygon == polygon);
         }
 
+        /**
+         * \brief расчетный угол расположен во всех четвертях
+         */
         TEST_METHOD(CalculatedAnglesLocatedInAllQuarters)
         {
             const std::vector<point2d> points = {

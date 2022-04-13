@@ -9,9 +9,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Tests
 {
+    /**
+     * \brief Класс тестирования функции IsPointInsidePolygon
+     */
     TEST_CLASS(IsPointInsidePolygon)
     {
     public:
+        /**
+         * \brief точка соответствует вершине
+         */
         TEST_METHOD(PointMatchesVertex)
         {
             const std::vector<point2d> points = {
@@ -22,6 +28,9 @@ namespace Tests
             Assert::IsTrue(is_point_inside_polygon(points, point));
         }
 
+        /**
+         * \brief точка находится сбоку
+         */
         TEST_METHOD(PointIsOnSide)
         {
             const std::vector<point2d> points = {
@@ -32,6 +41,9 @@ namespace Tests
             Assert::IsTrue(is_point_inside_polygon(points, point));
         }
 
+        /**
+         * \brief точка выше полигона
+         */
         TEST_METHOD(PointIsAbovePolygon)
         {
             const std::vector<point2d> points = {
@@ -42,6 +54,9 @@ namespace Tests
             Assert::IsFalse(is_point_inside_polygon(points, point));
         }
 
+        /**
+         * \brief точка под полигона
+         */
         TEST_METHOD(PointIsBelowPolygon)
         {
             const std::vector<point2d> points = {
@@ -52,6 +67,9 @@ namespace Tests
             Assert::IsFalse(is_point_inside_polygon(points, point));
         }
 
+        /**
+         * \brief точка точка находится справа от полигона
+         */
         TEST_METHOD(PointIsOnTheRightToPolygon)
         {
             const std::vector<point2d> points = {
@@ -62,6 +80,9 @@ namespace Tests
             Assert::IsFalse(is_point_inside_polygon(points, point));
         }
 
+        /**
+         * \brief точка точка находится слева от полигона
+         */
         TEST_METHOD(PointIsOnTheLeftToPolygon)
         {
             const std::vector<point2d> points = {
@@ -72,6 +93,9 @@ namespace Tests
             Assert::IsFalse(is_point_inside_polygon(points, point));
         }
 
+        /**
+         * \brief сложный Полигон и точка внутри
+         */
         TEST_METHOD(ComplexPolygonAndPointInside)
         {
             const std::vector<point2d> points = {
